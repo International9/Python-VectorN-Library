@@ -43,7 +43,7 @@ Installation Instructions:
 Support:
 -
 As Of Now The Vector Types Can Support Multiple Different Functionallities Such As:
-- Addition, Division, Multiplication And Subtruction.
+- Operators: Addition, Division, Multiplication, Subtruction Etc..
 - Casting To String.
 - Static Methods: Dot, Angle, Distance, Max And Min Functions.
 - Shorthand For Writing Different Vector (I.E: 'one', 'zero', 'left', 'right' Etc..) Like In Unity's Version.
