@@ -2,7 +2,7 @@ A Python Library Created For Represeting Different Vector Systems (2D, 3D & 4D V
 
 Heavily Inspired By Unity's Ones To Make People's Life Easier Instead Of Them Needing To Handle Positions Manually Or Use Lists.
 
-Also Has Static Functions Such As: 'Dot', 'Angle', 'Ditstance' Etc... To Again - Stop Manually Having To Write These Functions.
+Also Has Static Functions Such As: 'Dot', 'Angle', 'Distance' Etc... To Again - Stop Manually Having To Write These Functions.
 
 Contents:
 -
@@ -18,6 +18,13 @@ Vector Representations For 2D, 3D And 4D Including Variants Of Them To Handle In
 
 Installation Instructions:
 -
+
+**Easiest Way**
+  In The Commad Prompt: 
+  
+    "pip install git+https://github.com/International9/Python-VectorN-Library"
+    
+
 **Possible To Use Manual Installation:**
 
   1.) Download Or Clone The Directory Using This Line In Cmd: 
@@ -33,18 +40,12 @@ Installation Instructions:
     "pip install -r requirements.txt"
 
 
-**Easiest Way**
-  In The Commad Prompt: 
-  
-    "pip install git+https://github.com/International9/Python-VectorN-Library"
-
-
 Support:
 -
 As Of Now The Vector Types Can Support Multiple Different Functionallities Such As:
 - Addition, Division, Multiplication And Subtruction.
 - Casting To String.
-- Static Methods: Dot, Angle, Distance, Max And Min
-- Shorthand For Writing Different Vector (I.E: 'one', 'zero', 'left', 'right') Like In Unity's Version.
+- Static Methods: Dot, Angle, Distance, Max And Min Functions.
+- Shorthand For Writing Different Vector (I.E: 'one', 'zero', 'left', 'right' Etc..) Like In Unity's Version.
 
   
