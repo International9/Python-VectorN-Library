@@ -4,5 +4,5 @@ setup(
     name="VectorNLibrary",
     version="0.2",
     packages=find_packages(),
-    install_requires=["math"],
+    install_requires=[],
 )
