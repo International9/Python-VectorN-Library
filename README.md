@@ -25,15 +25,19 @@ Installation Instructions:
     "pip install git+https://github.com/International9/Python-VectorN-Library"
     
 
-**Possible To Use Manual Installation:**
+**Possible To Use Manual/Local Installation (Requires git):**
 
   1.) Download Or Clone The Directory Using This Line In Cmd: 
   
     "git clone https://github.com/International9/Python-VectorN-Library.git"
   
-  2.) Navigate into the project folder:
+  2.) Navigate Into The Cloned Project Folder:
 
-    "cd VectorNLibrary"
+    "cd (Directory Of Library Just Cloned)"
+
+  3.) Then Just:
+
+    "pip install ."
 
 
 Support:
