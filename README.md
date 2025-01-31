@@ -35,10 +35,6 @@ Installation Instructions:
 
     "cd VectorNLibrary"
 
-  3.) Install The Dependencies (Only Math Library) Using pip:
-
-    "pip install -r requirements.txt"
-
 
 Support:
 -
