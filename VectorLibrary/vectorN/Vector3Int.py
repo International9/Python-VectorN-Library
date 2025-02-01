@@ -3,6 +3,13 @@ from math import acos
 # Vector3Int Class
 class Vector3Int:
     def __init__(self, x : int, y : int, z : int):
+        if not isinstance(x, (int, float)) or isinstance(x, bool):
+            raise TypeError(f"x must be an int or float, not {type(x).__name__}")
+        if not isinstance(y, (int, float)) or isinstance(y, bool):
+            raise TypeError(f"y must be an int or float, not {type(y).__name__}")
+        if not isinstance(z, (int, float)) or isinstance(z, bool):
+            raise TypeError(f"z must be an int or float, not {type(z).__name__}")
+
         self.x = int(x)
         self.y = int(y)
         self.z = int(z)
