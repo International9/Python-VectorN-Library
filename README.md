@@ -52,4 +52,4 @@ As Of Now The Vector Types Can Support Multiple Different Functionallities Such 
 
 Example:
 -
-![Alt text](Images/Screenshot 2025-02-01 190153.png)
+![VectorNUsageExample](Images/Screenshot 2025-02-01 190153.png)
