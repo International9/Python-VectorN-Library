@@ -49,3 +49,7 @@ As Of Now The Vector Types Can Support Multiple Different Functionallities Such 
 - Casting To String.
 - Static Methods: Dot, Angle, Distance, Max And Min Functions.
 - Shorthand For Writing Different Vector (I.E: 'one', 'zero', 'left', 'right' Etc..) Like In Unity's Version.
+
+Example:
+-
+![Alt text](Images/Screenshot 2025-02-01 190153.png)
