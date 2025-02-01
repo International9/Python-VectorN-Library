@@ -8,8 +8,8 @@ class Vector2:
         if not isinstance(y, (int, float)) or isinstance(y, bool):
             raise TypeError(f"y must be an int or float, not {type(y).__name__}")
           
-        self.x = x
-        self.y = y
+        self.x : float = x
+        self.y : float = y
 
 
 
