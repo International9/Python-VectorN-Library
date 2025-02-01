@@ -49,7 +49,10 @@ class Vector2:
         return Vector2(min(a.x, b.x), min(a.y, b.y))
     
     @staticmethod
-    def Angle(self, other : "Vector2") -> float:
+    def Angle(a : "Vector2", b : "Vector2") -> float:
+        if not isinstance(a, Vector2) or not isinstance(b, Vector2):
+            raise TypeError("Both Arguments Must Be Of Type Vector2.")
+            
         dot_product = self.dot(other)
         magnitude_product = self.magnitude() * other.magnitude()
 
