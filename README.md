@@ -1,3 +1,5 @@
+About:
+-
 A Python Library Created For Represeting Different Vector Systems (2D, 3D & 4D Vectors)
 
 Heavily Inspired By Unity's Ones To Make People's Life Easier Instead Of Them Needing To Handle Positions Manually Or Use Lists.
@@ -47,5 +49,3 @@ As Of Now The Vector Types Can Support Multiple Different Functionallities Such 
 - Casting To String.
 - Static Methods: Dot, Angle, Distance, Max And Min Functions.
 - Shorthand For Writing Different Vector (I.E: 'one', 'zero', 'left', 'right' Etc..) Like In Unity's Version.
-
-  
