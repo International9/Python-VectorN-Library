@@ -12,10 +12,10 @@ class Vector4:
         if not isinstance(w, (int, float)) or isinstance(w, bool):
             raise TypeError(f"w must be an int or float, not {type(w).__name__}")
         
-        self.x = x
-        self.y = y
-        self.z = z
-        self.w = w
+        self.x : float = x
+        self.y : float = y
+        self.z : float = z
+        self.w : float = w
 
 
 
