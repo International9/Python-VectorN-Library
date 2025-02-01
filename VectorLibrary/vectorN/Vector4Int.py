@@ -102,6 +102,7 @@ class Vector4Int:
         self.y += o.y
         self.z += o.z
         self.w += o.w
+        return self
 
     def __isub__(self, o : "Vector4Int"):
         if not isinstance(o, Vector4Int):
@@ -111,21 +112,25 @@ class Vector4Int:
         self.y -= o.y
         self.z -= o.z
         self.w -= o.w
+        return self
 
     def __imul__(self, o):
         self.x *= o
         self.y *= o
         self.z *= o
         self.w *= o
+        return self
 
     def __itruediv__(self, o):
         self.x //= o
         self.y //= o
         self.z //= o
         self.w //= o
+        return self
 
     def __ifloordiv__(self, o : float):
         self /= o
+        return self
 
     def __eq__(self, o : "Vector4Int"):
         if not isinstance(o, Vector4Int):
