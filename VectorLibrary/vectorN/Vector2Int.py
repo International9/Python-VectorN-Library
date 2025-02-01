@@ -109,6 +109,7 @@ class Vector2Int:
             
         self.x += o.x
         self.y += o.y
+        return self
 
     def __isub__(self, o : "Vector2Int"):
         if not isinstance(o, Vector2Int):
@@ -116,17 +117,21 @@ class Vector2Int:
 
         self.x -= o.x
         self.y -= o.y
+        return self
 
     def __imul__(self, o : float):
         self.x *= int(o)
         self.y *= int(o)
+        return self
 
     def __itruediv__(self, o : float):
         self.x //= o
         self.y //= o
+        return self
 
     def __ifloordiv__(self, o : float):
         self /= o
+        return self
 
     def __eq__(self, o : "Vector2Int"):
         if not isinstance(o, Vector2Int):
