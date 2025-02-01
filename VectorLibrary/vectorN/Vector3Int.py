@@ -115,6 +115,7 @@ class Vector3Int:
         self.x += o.x
         self.y += o.y
         self.z += o.z
+        return self
 
     def __isub__(self, o : "Vector3Int"):
         if not isinstance(o, Vector3Int):
@@ -123,19 +124,23 @@ class Vector3Int:
         self.x -= o.x
         self.y -= o.y
         self.z -= o.z
+        return self
 
     def __imul__(self, o):
         self.x *= o
         self.y *= o
         self.z *= o
+        return self
 
     def __itruediv__(self, o : float):
         self.x //= o
         self.y //= o
         self.z //= o
+        return self
 
     def __ifloordiv__(self, o : float):
         self /= o
+        return self
 
     def __eq__(self, o : "Vector3Int"):
         if not isinstance(o, Vector3Int):
