@@ -2,7 +2,12 @@ from math import acos
 
 # Vector2 Class
 class Vector2:
-    def __init__(self, x : float, y : float):
+    def __init__(self, x : float, y : float):      
+        if not isinstance(x, (int, float)) or isinstance(x, bool):
+            raise TypeError(f"x must be an int or float, not {type(x).__name__}")
+        if not isinstance(y, (int, float)) or isinstance(y, bool):
+            raise TypeError(f"y must be an int or float, not {type(y).__name__}")
+          
         self.x = x
         self.y = y
 
@@ -149,3 +154,5 @@ class Vector2:
 
     def __repr__(self):
         return f"Vector2(x={self.x}, y={self.y})"
+
+print(Vector2(True, 2))
