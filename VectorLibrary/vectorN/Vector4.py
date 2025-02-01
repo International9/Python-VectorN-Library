@@ -68,7 +68,7 @@ class Vector4:
         if magnitude_product == 0: return 0
         
         cos_theta = dot_product / magnitude_product
-        return acos(max(-1, min(1, cos_theta))) 
+        return acos(cos_theta)
     
 
 
