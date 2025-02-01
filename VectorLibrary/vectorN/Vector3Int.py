@@ -53,19 +53,18 @@ class Vector3Int:
     
     
     @staticmethod
-    def Angle(self, other : "Vector3Int") -> float:
-        if not isinstance(other, Vector3Int):
-            raise TypeError("Argument 'other' Must Be Of Type Vector3Int.")
+    def Angle(a : "Vector3Int", b : "Vector3Int") -> float:
+        if not isinstance(a, Vector3Int) or not isinstance(b, Vector3Int):
+            raise TypeError("Both Arguments Must Be Of Type Vector3Int.")
 
-        dot_product = self.dot(other)
-        magnitude_product = self.magnitude() * other.magnitude()
+        dot_product = Vector3Int.Dot(a, b)
+        magnitude_product = a.magnitude() * b.magnitude()
         
-        if magnitude_product == 0:
-            return 0
+        if magnitude_product == 0: return 0
         
         cos_theta = dot_product / magnitude_product
         return acos(max(-1, min(1, cos_theta))) 
-
+    
 
     @staticmethod
     def zero(): return Vector3Int(0, 0, 0)
