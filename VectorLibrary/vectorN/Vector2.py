@@ -53,11 +53,10 @@ class Vector2:
         if not isinstance(a, Vector2) or not isinstance(b, Vector2):
             raise TypeError("Both Arguments Must Be Of Type Vector2.")
             
-        dot_product = self.dot(other)
-        magnitude_product = self.magnitude() * other.magnitude()
+        dot_product = Vector2.Dot(a, b)
+        magnitude_product = a.magnitude() * b.magnitude()
 
-        if magnitude_product == 0:
-            return 0
+        if magnitude_product == 0: return 0
         
         cos_theta = dot_product / magnitude_product
         return acos(max(-1, min(1, cos_theta))) 
