@@ -3,10 +3,10 @@ from math import acos
 # Vector4Int Class
 class Vector4Int:
     def __init__(self, x : int, y : int, z : int, w : int):
-        self.x = x
-        self.y = y
-        self.z = z
-        self.w = w
+        self.x = int(x)
+        self.y = int(y)
+        self.z = int(z)
+        self.w = int(w)
 
 
 
