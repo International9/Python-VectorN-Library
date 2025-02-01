@@ -10,9 +10,9 @@ class Vector3:
         if not isinstance(z, (int, float)) or isinstance(z, bool):
             raise TypeError(f"z must be an int or float, not {type(z).__name__}")
      
-        self.x = x
-        self.y = y
-        self.z = z
+        self.x : float = x
+        self.y : float = y
+        self.z : float = z
 
 
 
