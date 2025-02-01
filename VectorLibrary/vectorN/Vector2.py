@@ -154,5 +154,3 @@ class Vector2:
 
     def __repr__(self):
         return f"Vector2(x={self.x}, y={self.y})"
-
-print(Vector2(True, 2))
