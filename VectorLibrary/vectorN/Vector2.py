@@ -59,7 +59,7 @@ class Vector2:
         if magnitude_product == 0: return 0
         
         cos_theta = dot_product / magnitude_product
-        return acos(max(-1, min(1, cos_theta))) 
+        return acos(cos_theta)
 
     @staticmethod
     def zero(): return Vector2(0, 0)
