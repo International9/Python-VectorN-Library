@@ -2,7 +2,14 @@ from math import acos
 
 # Vector3 Class
 class Vector3:
-    def __init__(self, x : float, y : float, z : float):
+    def __init__(self, x : float, y : float, z : float):       
+        if not isinstance(x, (int, float)) or isinstance(x, bool):
+            raise TypeError(f"x must be an int or float, not {type(x).__name__}")
+        if not isinstance(y, (int, float)) or isinstance(y, bool):
+            raise TypeError(f"y must be an int or float, not {type(y).__name__}")
+        if not isinstance(z, (int, float)) or isinstance(z, bool):
+            raise TypeError(f"z must be an int or float, not {type(z).__name__}")
+     
         self.x = x
         self.y = y
         self.z = z
