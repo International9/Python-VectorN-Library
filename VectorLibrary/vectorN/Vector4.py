@@ -3,6 +3,15 @@ from math import acos
 # Vector4 Class
 class Vector4:
     def __init__(self, x : float, y : float, z : float, w : float):
+        if not isinstance(x, (int, float)) or isinstance(x, bool):
+            raise TypeError(f"x must be an int or float, not {type(x).__name__}")
+        if not isinstance(y, (int, float)) or isinstance(y, bool):
+            raise TypeError(f"y must be an int or float, not {type(y).__name__}")
+        if not isinstance(z, (int, float)) or isinstance(z, bool):
+            raise TypeError(f"z must be an int or float, not {type(z).__name__}")
+        if not isinstance(w, (int, float)) or isinstance(w, bool):
+            raise TypeError(f"w must be an int or float, not {type(w).__name__}")
+        
         self.x = x
         self.y = y
         self.z = z
@@ -68,7 +77,7 @@ class Vector4:
         if magnitude_product == 0: return 0
         
         cos_theta = dot_product / magnitude_product
-        return acos(cos_theta)
+        return acos(cos_theta) 
     
 
 
