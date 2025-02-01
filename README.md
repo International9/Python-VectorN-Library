@@ -24,7 +24,7 @@ Installation Instructions:
 **Easiest Way**
   In The Commad Prompt: 
   
-    "pip install git+https://github.com/International9/Python-VectorN-Library](https://github.com/International9/Python-VectorN-Library/tree/main/VectorLibrary"
+    "pip install git+https://github.com/International9/Python-VectorN-Library/tree/main/VectorLibrary"
     
 
 **Possible To Use Manual/Local Installation (Requires git):**
