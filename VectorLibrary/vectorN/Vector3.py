@@ -55,18 +55,18 @@ class Vector3:
         return Vector3(max(a.x, b.x), max(a.y, b.y), max(a.z, b.z))
     
     @staticmethod
-    def Angle(self, other : "Vector3") -> float:
-        if not isinstance(other, Vector3):
-            raise TypeError("Argument 'other' Must Be Of Type Vector3.")
+    def Angle(a : "Vector3", b : "Vector3") -> float:
+        if not isinstance(a, Vector3) or not isinstance(b, Vector3):
+            raise TypeError("Both Arguments Must Be Of Type Vector3.")
 
-        dot_product = self.dot(other)
-        magnitude_product = self.magnitude() * other.magnitude()
+        dot_product = Vector3.Dot(a, b)
+        magnitude_product = a.magnitude() * b.magnitude()
         
-        if magnitude_product == 0:
-            return 0
+        if magnitude_product == 0: return 0
         
         cos_theta = dot_product / magnitude_product
         return acos(max(-1, min(1, cos_theta))) 
+
 
 
     @staticmethod
