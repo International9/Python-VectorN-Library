@@ -3,36 +3,77 @@ from math import acos
 # Vector4 Class
 class Vector4:
     def __init__(self, x : float, y : float, z : float, w : float):
-        if not isinstance(x, (int, float)) or isinstance(x, bool):
-            raise TypeError(f"x must be an int or float, not {type(x).__name__}")
-        if not isinstance(y, (int, float)) or isinstance(y, bool):
-            raise TypeError(f"y must be an int or float, not {type(y).__name__}")
-        if not isinstance(z, (int, float)) or isinstance(z, bool):
-            raise TypeError(f"z must be an int or float, not {type(z).__name__}")
-        if not isinstance(w, (int, float)) or isinstance(w, bool):
-            raise TypeError(f"w must be an int or float, not {type(w).__name__}")
+        self.x = x
+        self.y = y
+        self.z = z
+        self.w = w
+
+
+
+
+
+    # Setters:
+    @property
+    def x(self) -> float:
+        return self._x
+
+    @x.setter
+    def x(self, value):
+        if (not isinstance(value, (int, float)) or isinstance(value, bool)):
+            raise TypeError("Cannot Set X To That Type! Only Int Or Float.")
         
-        self.x : float = x
-        self.y : float = y
-        self.z : float = z
-        self.w : float = w
+        self._x = value
+
+    @property
+    def y(self) -> float:
+        return self._y
+
+    @y.setter
+    def y(self, value):
+        if (not isinstance(value, (int, float)) or isinstance(value, bool)):
+            raise TypeError("Cannot Set Y To That Type! Only Int Or Float.")
+        
+        self._y = value
+
+    @property
+    def z(self) -> float:
+        return self._z
+    
+    @z.setter
+    def z(self, value):
+        if (not isinstance(value, (int, float)) or isinstance(value, bool)):
+            raise TypeError("Cannot Set Z To That Type! Only Int Or Float.")
+        
+        self._z = value
+
+    @property
+    def w(self) -> float:
+        return self._w
+    
+    @w.setter
+    def w(self, value):
+        if (not isinstance(value, (int, float)) or isinstance(value, bool)):
+            raise TypeError("Cannot Set W To That Type! Only Int Or Float.")
+        
+        self._w = value
 
 
 
-    # Regular Instance Methods:
+
+
+
+    @property
     def magnitude(self) -> float:
         return (self.x * self.x + self.y * self.y + self.z * self.z + self.w * self.w) ** 0.5
 
-    def Normalize(self):
-        mag = self.magnitude()
-        self.x /= mag
-        self.y /= mag
-        self.z /= mag
-        self.w /= mag
-
+    @property
     def Normalized(self):
-        mag = self.magnitude()
+        mag = self.magnitude
         return Vector4(self.x / mag, self.y / mag, self.z / mag, self.w / mag)
+
+    # Regular Instance Methods:
+    def Normalize(self):
+        self.x /= self.magnitude
 
 
 
@@ -49,7 +90,7 @@ class Vector4:
         if not isinstance(a, Vector4) or not isinstance(b, Vector4):
             raise TypeError("Both Arguments Must Be Of Type Vector4.")
 
-        return (a - b).magnitude()
+        return (a - b).magnitude
 
     @staticmethod
     def Max(a : "Vector4", b : "Vector4"):
@@ -72,7 +113,7 @@ class Vector4:
             raise TypeError("Both Arguments Must Be Of Type Vector4.")
 
         dot_product = Vector4.Dot(a, b)
-        magnitude_product = a.magnitude() * b.magnitude()
+        magnitude_product = a.magnitude * b.magnitude
         
         if magnitude_product == 0: return 0
         
