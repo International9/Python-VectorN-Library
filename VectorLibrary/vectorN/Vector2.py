@@ -2,27 +2,49 @@ from math import acos
 
 # Vector2 Class
 class Vector2:
-    def __init__(self, x : float, y : float):      
-        if not isinstance(x, (int, float)) or isinstance(x, bool):
-            raise TypeError(f"x must be an int or float, not {type(x).__name__}")
-        if not isinstance(y, (int, float)) or isinstance(y, bool):
-            raise TypeError(f"y must be an int or float, not {type(y).__name__}")
-          
-        self.x : float = x
-        self.y : float = y
+    def __init__(self, x : float, y : float):
+        self.x = x
+        self.y = y
 
 
 
-    # Regular Instance Methods:
+    # Setters:
+    @property
+    def x(self):
+        return self._x
+
+    @x.setter
+    def x(self, value):
+        if (not isinstance(value, (int, float)) or isinstance(value, bool)):
+            raise TypeError("Cannot Set X To That Type! Only Int Or Float.")
+        
+        self._x = value
+
+    @property
+    def y(self):
+        return self._y
+
+    @y.setter
+    def y(self, value):
+        if (not isinstance(value, (int, float)) or isinstance(value, bool)):
+            raise TypeError("Cannot Set Y To That Type! Only Int Or Float.")
+        
+        self._y = value
+
+
+
+
+    @property
     def magnitude(self):
         return (self.x * self.x + self.y * self.y) ** 0.5
 
-    def Normalize(self):
-        self /= self.magnitude()
-
+    @property
     def Normalized(self):
         return self / self.magnitude()
 
+    # Regular Instance Methods:
+    def Normalize(self):
+        self /= self.magnitude()
 
     # Static Methods
     @staticmethod
