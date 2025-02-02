@@ -3,28 +3,64 @@ from math import acos
 # Vector3Int Class
 class Vector3Int:
     def __init__(self, x : int, y : int, z : int):
-        if not isinstance(x, (int, float)) or isinstance(x, bool):
-            raise TypeError(f"x must be an int or float, not {type(x).__name__}")
-        if not isinstance(y, (int, float)) or isinstance(y, bool):
-            raise TypeError(f"y must be an int or float, not {type(y).__name__}")
-        if not isinstance(z, (int, float)) or isinstance(z, bool):
-            raise TypeError(f"z must be an int or float, not {type(z).__name__}")
-
-        self.x : int = int(x)
-        self.y : int = int(y)
-        self.z : int = int(z)
+        self.x = x
+        self.y = y
+        self.z = z
 
 
 
-    # Regular Instance Methods:
+
+    # Setters:
+    @property
+    def x(self) -> int:
+        return self._x
+
+    @x.setter
+    def x(self, value):
+        if (not isinstance(value, (int, float)) or isinstance(value, bool)):
+            raise TypeError("Cannot Set X To That Type! Only Int Or Float.")
+        
+        self._x = int(value)
+
+    @property
+    def y(self) -> int:
+        return self._y
+
+    @y.setter
+    def y(self, value):
+        if (not isinstance(value, (int, float)) or isinstance(value, bool)):
+            raise TypeError("Cannot Set Y To That Type! Only Int Or Float.")
+        
+        self._y = int(value)
+
+    @property
+    def z(self) -> int:
+        return self._z
+    
+    @z.setter
+    def z(self, value):
+        if (not isinstance(value, (int, float)) or isinstance(value, bool)):
+            raise TypeError("Cannot Set Z To That Type! Only Int Or Float.")
+        
+        self._z = int(value)
+
+
+
+
+
+
+    @property
     def magnitude(self):
         return (self.x * self.x + self.y * self.y + self.z * self.z) ** 0.5
 
-    def Normalize(self):
-        self.x //= self.magnitude()
-
+    @property
     def Normalized(self):
-        return self // self.magnitude()
+        return self // self.magnitude
+
+    # Regular Instance Methods:
+    def Normalize(self):
+        self.x /= self.magnitude
+
 
 
 
@@ -41,8 +77,8 @@ class Vector3Int:
         if not isinstance(a, Vector3Int) or not isinstance(b, Vector3Int):
             raise TypeError("Both Arguments Must Be Of Type Vector3Int.")
 
-        return (a - b).magnitude()
-
+        return (a - b).magnitude
+    
 
     @staticmethod
     def Max(a : "Vector3Int", b : "Vector3Int"):
@@ -65,7 +101,7 @@ class Vector3Int:
             raise TypeError("Both Arguments Must Be Of Type Vector3Int.")
 
         dot_product = Vector3Int.Dot(a, b)
-        magnitude_product = a.magnitude() * b.magnitude()
+        magnitude_product = a.magnitude * b.magnitude
         
         if magnitude_product == 0: return 0
         
