@@ -3,33 +3,51 @@ from math import acos
 # Vector3 Class
 class Vector3:
     def __init__(self, x : float, y : float, z : float):       
-        if not isinstance(x, (int, float)) or isinstance(x, bool):
-            raise TypeError(f"x must be an int or float, not {type(x).__name__}")
-        if not isinstance(y, (int, float)) or isinstance(y, bool):
-            raise TypeError(f"y must be an int or float, not {type(y).__name__}")
-        if not isinstance(z, (int, float)) or isinstance(z, bool):
-            raise TypeError(f"z must be an int or float, not {type(z).__name__}")
-     
-        self.x : float = x
-        self.y : float = y
-        self.z : float = z
+        self.x = x
+        self.y = y
+        self.z = z
 
 
 
-    # Regular Instance Methods:
-    def magnitude(self):
+    
+    # Setters:
+    @property
+    def x(self) -> int:
+        return self._x
+
+    @x.setter
+    def x(self, value):
+        if (not isinstance(value, (int, float)) or isinstance(value, bool)):
+            raise TypeError("Cannot Set X To That Type! Only Int Or Float.")
+        
+        self._x = value
+
+    @property
+    def y(self) -> int:
+        return self._y
+
+    @y.setter
+    def y(self, value):
+        if (not isinstance(value, (int, float)) or isinstance(value, bool)):
+            raise TypeError("Cannot Set Y To That Type! Only Int Or Float.")
+        
+        self._y = value
+
+
+
+
+
+    @property
+    def magnitude(self) -> float:
         return (self.x * self.x + self.y * self.y + self.z * self.z) ** 0.5
 
-    def Normalize(self):
-        mag = self.magnitude()
-        self.x /= mag
-        self.y /= mag
-        self.z /= mag
-
-    def Normalized(self):
+    @property
+    def Normalized(self) -> "Vector3":
         mag = self.magnitude()
         return Vector3(self.x / mag, self.y / mag, self.z / mag)
 
+    def Normalize(self):
+        self.x /= self.magnitude()
 
 
     # Static Methods
