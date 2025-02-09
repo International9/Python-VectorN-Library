@@ -43,11 +43,11 @@ class Vector3:
 
     @property
     def Normalized(self) -> "Vector3":
-        mag = self.magnitude()
+        mag = self.magnitude
         return Vector3(self.x / mag, self.y / mag, self.z / mag)
 
     def Normalize(self):
-        self.x /= self.magnitude()
+        self.x /= self.magnitude
 
 
     # Static Methods
@@ -63,7 +63,7 @@ class Vector3:
         if not isinstance(a, Vector3) or not isinstance(b, Vector3):
             raise TypeError("Both Arguments Must Be Of Type Vector3.")
 
-        return (a - b).magnitude()
+        return (a - b).magnitude
 
     @staticmethod
     def Max(a : "Vector3", b : "Vector3"):
@@ -85,7 +85,7 @@ class Vector3:
             raise TypeError("Both Arguments Must Be Of Type Vector3.")
 
         dot_product = Vector3.Dot(a, b)
-        magnitude_product = a.magnitude() * b.magnitude()
+        magnitude_product = a.magnitude * b.magnitude
         
         if magnitude_product == 0: return 0
         
